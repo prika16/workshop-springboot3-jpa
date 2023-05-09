@@ -3,11 +3,14 @@ package com.cursospring.CursoSpringNelio.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.hibernate.annotations.Fetch;
+
 import com.cursospring.CursoSpringNelio.entities.pk.OrderItemPK;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,7 +35,7 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 	
-	@JsonIgnore
+	@JsonIgnore	
 	public Order getOrder() {
 		return id.getOrder();
 	}
@@ -41,6 +44,7 @@ public class OrderItem implements Serializable {
 		id.setOrder(order);
 	}
 	
+
 	public Product getProdut() {
 		return id.getProduct();
 	}

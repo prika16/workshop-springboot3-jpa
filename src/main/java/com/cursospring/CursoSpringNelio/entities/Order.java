@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import org.hibernate.annotations.Fetch;
+
 import com.cursospring.CursoSpringNelio.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -85,6 +87,7 @@ public class Order implements Serializable {
 	public void setClient(User client) {
 		this.client = client;
 	}
+	
 	
 	public Set<OrderItem> getItems(){
 		return items;
